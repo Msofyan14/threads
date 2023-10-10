@@ -95,6 +95,8 @@ export async function fetchCommunityPosts(id: string) {
       ],
     });
 
+    communityPosts.threads.sort((a: any, b: any) => b.createdAt - a.createdAt);
+
     return communityPosts;
   } catch (error) {
     // Handle any errors
